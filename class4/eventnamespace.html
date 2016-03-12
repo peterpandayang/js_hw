@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var $btn1 = $('.btn-group:first button:first'),
+                    $btn2 = $('.btn-group:first button:eq(1)'),
+                    $btn3 = $('.btn-group:first button:last');
+                    
+                $btn1.on('click.hello', function() {
+                    console.log("Hello World");
+                }).on('click.bye', function() {
+                    console.log("Bye bye");
+                })
+                $btn2.on('click', function() {
+                    $btn1.off('click');
+                });
+                $btn3.on('click', function() {
+                    $btn1.off('click.bye');
+                });
+
+                var $btn4 = $('.btn-group:last button:first'), 
+                    $btn5 = $('.btn-group:last button:eq(1)'), 
+                    $btn6 = $('.btn-group:last button:last');
+                
+                var sayAlice = function() { console.log("Alice"); },
+                    sayBob = function() { console.log("Bob"); };
+                    
+                $btn4.on('click', sayAlice).on('click', sayBob);
+                $btn5.on('click', function() {
+                    $btn4.off('click', sayAlice);
+                });
+                $btn6.on('click', function() {
+                    $btn4.off('click', sayBob);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Hello World</button>
+                <button type="button" class="btn btn-default">Total Off</button>
+                <button type="button" class="btn btn-default">Bye Off</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Announce</button>
+                <button type="button" class="btn btn-default">Alice off</button>
+                <button type="button" class="btn btn-default">Bob Off</button>
+            </div>
+        </div>
+</body>
+</html>

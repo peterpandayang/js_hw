@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+        <input type="text" id="text"/>
+        <input type="button" id="btn" value="Clear"/>
+        <pre id="console"></pre>
+        <script type="text/javascript">
+            var text = document.getElementById("text");
+            var btn = document.getElementById("btn");
+            var console = document.getElementById("console");
+            
+            function printout(msg) {
+                console.appendChild(document.createTextNode(msg + "\n"));
+            }
+            text.oninput = function() {
+                printout("text is: " + this.value);
+            }
+            
+            // DOM level 2 event handling does not work
+            //text.addEventListener("input", function() {
+            //    printout("txt is: " + this.value);
+            //});
+            btn.onclick = function() {
+                text.value = "";
+                text.oninput();
+            }
+        </script>
+    </body>
+</html>

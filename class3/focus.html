@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <input type="text" id="txt1"/><br/>
+        <input type="text" id="txt2"/><br/>
+        <input type="button" id="btn" value="Click Me"/>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var txt1 = document.getElementById("txt1");
+            var txt2 = document.getElementById("txt2");
+            var btn = document.getElementById("btn");
+            
+            btn.focus();
+            
+            txt1.onfocus = function() {
+                printout("Text 1 is on focus");
+            }
+            txt1.onblur = function() {
+                printout("Text 1 is out of focus");
+            }
+            txt2.onfocus = function() {
+                printout("Text 2 is on focus");
+            }
+            txt2.onblur = function() {
+                printout("Text 2 is out of focus");
+            }
+            btn.onfocus = function() {
+                printout("Button is on focus");
+            }
+            btn.onblur = function() {
+                printout("Button is out of focus");
+            }
+            btn.onclick = function() {
+                printout("Button is clicked");
+            }
+        </script>
+    </body>
+</html>

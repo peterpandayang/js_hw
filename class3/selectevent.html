@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        Name: <input type="text" id="name" name="name" value="" /><br/>
+        School <input type="text" id="school" name="school" value="" /><br/>
+        <input type="button" id="btn" value="Select Name" />
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+        (function() {
+            var name = document.getElementById("name");
+            var school = document.getElementById("school");
+            name.onchange = function() {
+                printout("the change event from name is fired");
+            }
+            name.oninput = function() {
+                printout("the input event from name is fired");
+            }
+            school.onchange = function() {
+                printout("the change event from school is fired");
+            }
+            name.onkeydown = function() {
+                printout("key down event is fired");
+            }
+            name.onkeypress = function() {
+                printout("key press event is fired");
+            }
+            name.onkeyup = function() {
+                printout("key up event is fired");
+            }
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                name.select();
+            }
+            name.onselect = function() {
+                printout("the name is selected");
+                printout("from " + name.selectionStart);
+                printout("to " + name.selectionEnd);
+                printout("selected substring is " + name.value.substring(name.selectionStart, name.selectionEnd));
+            }
+        })();
+        </script>
+    </body>
+</html>

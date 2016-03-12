@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script type="text/javascript" src="nodemanipulation.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Node Manipulation Demo</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Add List Item</h2>
+                    <!-- http://getbootstrap.com/css/#forms-horizontal -->
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Option</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline"><input type="radio" id="rbtnaddtop" name="addoptions">From Top</label>
+                                <label class="radio-inline"><input type="radio" id="rbtnaddbot" name="addoptions">From Bottom</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Text</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="itemtext"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" id="addbtn" class="btn btn-default">Add Item</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h2>Remove List Item</h2>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Option</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline"><input type="radio" id="rbtnrmvtop" name="rmvoptions">From Top</label>
+                                <label class="radio-inline"><input type="radio" id="rbtnrmvbot" name="rmvoptions">From Bottom</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" id="rmvbtn" class="btn btn-default">Remove Item</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <h2>List</h2>
+                    <p id="hint">The list is now empty</p>
+                    <ul id="list"></ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

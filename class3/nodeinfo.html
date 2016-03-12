@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+        <p>Hello World</p>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        <script type="text/javascript">
+            (function() {
+                var pre = document.getElementById("output");
+                var output = "The document type: " + document.nodeType + ", name: " + document.nodeName + ", value: " + document.nodeValue;
+                var html = document.documentElement;
+                output += "\n" + "The <html> type: " + html.nodeType + ", name: " + html.nodeName + ", value: " + html.nodeValue;
+                var head = document.head;
+                output += "\n" + "The <head> type: " + head.nodeType + ", name: " + head.nodeName + ", value: " + head.nodeValue;
+                var body = document.body;
+                output += "\n" + "The <body> type: " + body.nodeType + ", name: " + body.nodeName + ", value: " + body.nodeValue;
+                var p = document.getElementsByTagName("p")[0];
+                output += "\n" + "The <p> type: " + p.nodeType + ", name: " + p.nodeName + ", value: " + p.nodeValue;
+                var text = p.firstChild;
+                output += "\n" + "The text type: " + text.nodeType + ", name: " + text.nodeName + ", value: " + text.nodeValue;
+                pre.appendChild(document.createTextNode(output));
+            })();            
+        </script>
+    </body>
+</html>

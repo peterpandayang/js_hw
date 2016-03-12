@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <input type="text" id="txt"/>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var txt = document.getElementById("txt");
+            txt.onkeydown = function() {
+                printout("Keydown event happens");
+            }
+            txt.onkeyup = function() {
+                printout("Keyup event happens");
+            }
+            txt.onkeypress = function(event) {
+                printout("Keypress event happens with the char: " + String.fromCharCode(event.charCode));
+            }
+        </script>        
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <ul id="list">
+            <li id="firstItem">
+                <input type="button" id="btn" value="Click Me">
+            </li>
+            <li id="secondItem">
+                <input type="button" id="btn2" value="Click Me Again">
+            </li>
+        </ul>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var btn = document.getElementById("btn");
+            btn.onclick = function(event) {
+                event.stopPropagation();
+                printout("at btn: " + event.eventPhase);
+            }
+            var ul = document.getElementById("list");
+            ul.onclick = function(event) {
+                printout("at ul: " + event.eventPhase);
+            }
+            
+            ul.addEventListener("click", function(event) {
+                printout("UL - Capture");
+            }, true);
+            ul.addEventListener("click", function(event) {
+                printout("UL - Bubble");
+            }, false);
+            
+            document.body.addEventListener("click", function(event) {
+                printout(event.currentTarget == this);
+                printout(event.target == this);
+                printout("at body: " + event.eventPhase);
+            }, true);
+        </script>
+    </body>
+</html>

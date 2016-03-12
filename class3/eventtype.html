@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>Hello World</div>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var div = document.getElementsByTagName("div")[0];
+            div.onclick = function(event) {
+                printout(event.type);
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <input type="button" value="Click Me" id="btn"/>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var btn = document.getElementById("btn");
+            btn.onmousedown = function(event) {
+                var keys = [];
+                
+                if (event.shiftKey) {
+                    keys.push("Shift");
+                }
+                if (event.ctrlKey) {
+                    keys.push("Ctrl");
+                }
+                if (event.altKey) {
+                    keys.push("Alt");
+                }
+                if (event.metaKey) {
+                    keys.push("Meta");
+                }
+                
+                printout("Mouse click with the following keys pressed: " + keys);
+
+               switch(event.button) {
+                   case 0:
+                       printout("You pressed the primary (left) button");
+                       break;
+                   case 2:
+                       printout("You pressed the secondary (right) button");
+                       break;
+                  default:
+                      printout("You pressed a unknown button");
+               }
+            }
+        </script>
+    </body>
+</html>

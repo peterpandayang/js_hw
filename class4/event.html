@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                function display() {
+                    console.log(event.currentTarget.nodeName);
+                    console.log(event.target.nodeName);
+                    console.log($(this).text());
+                }
+                $("ul").on('click', 'li', display);
+                //$("ul li").on('click', display);
+            });
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>Item one</li>
+            <li>Item two</li>
+            <li>Item three</li>
+            <li>Item four</li>
+        </ul>
+    </body>
+</html>

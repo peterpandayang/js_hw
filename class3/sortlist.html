@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+        <h1>Student Names:</h1>
+        <ul id="list">
+            <li>Frank</li>
+            <li>Alice</li>
+            <li>Samuel</li>
+            <li>David</li>
+            <li>Bobby</li>
+            <li>Karen</li>
+        </ul>
+        <input type="button" id="btn" value="Sort Name"/>
+        <script type="text/javascript">
+            (function() {
+                var ul = document.getElementById("list");
+                var lis = ul.getElementsByTagName("li");
+                var lisarr = Array.prototype.slice.call(lis);
+                lisarr.sort(function(li1, li2) {
+                    var name1 = li1.firstChild.nodeValue;
+                    var name2 = li2.firstChild.nodeValue;
+                    if (name1 > name2) {
+                        return 1;
+                    } else if (name1 < name2) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                });
+                for (var i = 0; i < lisarr.length; i++) {
+                    ul.appendChild(lisarr[i]);
+                }
+            })();
+        </script>
+    </body>
+</html>

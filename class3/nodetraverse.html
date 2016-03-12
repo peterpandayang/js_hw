@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+        <div class="container">
+        <ul id="list">
+            <li id="item1">Item One</li>
+            <li id="item2">Item Two</li>
+            <li id="item3">Item Three</li>
+        </ul>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        </div>
+        <script type="text/javascript">
+        (function() {
+            var pre = document.getElementById("output");
+            var ul = document.getElementById("list");
+            var output = "The list has " + ul.childNodes.length + " child nodes";
+            var i = 0, elem = ul.firstChild;
+            while (i < ul.childNodes.length) {
+                output += "\n" + "The child " + i + ": ";
+                if (elem.nodeType === Node.ELEMENT_NODE) {
+                    output += "element <" + elem.nodeName + "> with id = " + elem.id;
+                } else if (elem.nodeType === Node.TEXT_NODE) {
+                    output += "text with content = '" + elem.nodeValue + "'";
+                } else {
+                    output += "unknown type";
+                }
+                elem = elem.nextSibling;
+                i++;
+            }
+            output += "\n" + "The list has " + ul.childElementCount + " child elements";
+            i = 0, elem = ul.firstElementChild;
+            while (i < ul.childElementCount) {
+                output += "\n" + "The element child " + i + ": ";
+                output += "element <" + elem.nodeName + "> with id = " + elem.id;
+                elem = elem.nextElementSibling;
+                i++;
+            }
+            pre.appendChild(document.createTextNode(output));
+        })();
+        </script>
+    </body>
+</html>

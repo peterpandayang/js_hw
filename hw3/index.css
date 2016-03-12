@@ -1,0 +1,14 @@
+span {
+    cursor:pointer;
+}
+.asc {
+    background:url('icon_asc.gif') no-repeat right center;
+    padding-right: 18px;
+}
+.desc {
+    background:url('icon_desc.gif') no-repeat right center;
+    padding-right: 18px;
+}
+.highlight {
+    background-color: #FFFF88;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            #area {
+                background-color:yellow;
+                height:100px;
+                width:400px
+            }
+        </style>
+    </head>
+    <body>
+        <div id="area"></div>
+        <div id="coord">Here is the mouse position</div>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var area = document.getElementById("area");
+            area.onclick = function() {
+                printout("Click event happens");
+            }
+            area.ondblclick = function() {
+                printout("Double click event happens");
+            }
+            area.onmousedown = function() {
+                printout("Mouse down event happens");
+            }
+            area.onmouseup = function() {
+                printout("Mouse up event happens");
+            }
+            area.onmouseover = function() {
+                printout("Mouse over event happens");
+            }
+            area.onmouseout = function() {
+                printout("Mouse out event happens");
+            }
+            
+            area.onmousemove = function(event) {
+                var coord = document.getElementById("coord");
+                var txt = coord.firstChild;
+                txt.nodeValue = "(" + event.clientX + ", " + event.clientY + ")";
+            }
+        </script>
+    </body>
+</html>

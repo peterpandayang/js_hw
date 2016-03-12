@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form action="//www.google.com/" method="GET">
+            Username: <input type="text" name="name" id="name" value="" />
+            <input type="submit" value="Register" name="btn" id="btn"/>
+        </form>
+        <script type="text/javascript">
+            var btn = document.getElementById("btn");
+            btn.onclick = function(event) {
+                var input = document.getElementById("name");
+                if (input.value === "") {
+                    alert("The username is blank.");
+                    event.preventDefault();
+                }
+            };
+        </script>
+    </body>
+</html>

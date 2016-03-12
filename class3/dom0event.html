@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <input id="btn" type="button" value="Click Me"/>
+        <input id="btn2" type="button" value="Mute"/>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var btn = document.getElementById("btn");
+            var btn2 = document.getElementById("btn2");
+            
+            btn.onclick = function () {
+                printout("I am clicked");
+            };
+            
+            btn.onclick = function () {
+                printout("I am clicked again");
+            };
+            
+            btn2.onclick = function() {
+                btn.onclick = null;
+            };
+            
+        </script>
+    </body>
+</html>

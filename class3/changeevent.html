@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form>
+        Your favorite school: <select id="school" name="school">
+            <option value="sofia">Sofia</option>
+            <option value="stanford">Stanford</option>
+            <option value="sjst">San Jose State</option>
+        </select><br/>
+        <input id="btn" type="button" value="Add Berkeley" />
+        <input type="submit" value="Submit" />
+        </form>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var sel = document.getElementById("school");
+            sel.onchange = function() {
+                printout("select a different school with index " + this.selectedIndex);
+                printout("select a different school with name " + this.options[this.selectedIndex].text);
+            }
+            sel.options[2].selected = true;
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                var newOpt = document.createElement("option");
+                newOpt.appendChild(document.createTextNode("Berkeley"));
+                newOpt.setAttribute("value", "berkeley");
+                sel.appendChild(newOpt);
+            }
+        </script>
+    </body>
+</html>

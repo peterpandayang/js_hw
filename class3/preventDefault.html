@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <a href="//www.google.com/">Get $100 bucks</a>
+        <script type="text/javascript">
+            var link = document.links[0];
+            link.onclick = function(event) {
+                alert("Stop! This site is evil.");
+                event.preventDefault();
+                //if (!confirm("Stop! This site is evil. Do you still want to go there?")) {
+                //    event.preventDefault();
+                //}
+            }
+        </script>
+    </body>
+</html>

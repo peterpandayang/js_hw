@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $(".alert").hide();
+                $("button").click(function() {
+                    $(".alert").show();
+                });
+                $(".close").click(function(evt) {
+                    evt.preventDefault();
+                    $(".alert").fadeOut();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>My First Website</h1>
+            <div class="alert alert-success">
+                <a href="#" class="close">&times;</a>
+                <strong>Hello World!</strong> This is a Bootstrap alert box.
+            </div>
+            <button type="button" class="btn btn-success">Hello World</button>
+        </div>
+    </body>
+</html>

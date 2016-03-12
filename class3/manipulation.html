@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <ul id="list">
+            <li id="first">First Item</li>
+            <li>Second Item</li>
+            <li>Third Item</li>
+            <li>Fourth Item</li>
+        </ul>
+        <script type="text/javascript">
+        (function() {
+            var li = document.createElement("li");
+            var txt = document.createTextNode("Fifth Item");
+            li.appendChild(txt);
+            
+            // 1.
+            //var ul = document.getElementsByTagName("ul")[0];
+            //ul.appendChild(li);
+            
+            // 2.
+            //var ul = document.getElementById("list");
+            //var li2 = document.getElementsByTagName("li")[1];
+            //ul.replaceChild(li, li2);
+            
+            // 3.
+            //var ul = document.getElementsByTagName("ul")[0];
+            //var li = document.getElementsByTagName("li")[0];
+            //ul.removeChild(li);
+            
+            // 4.
+            var ul = document.getElementById("list");
+            var li = document.getElementById("first");
+            var liclone = li.cloneNode(true);
+            ul.appendChild(liclone);
+            var ulclone = ul.cloneNode(true);
+            document.body.insertBefore(ulclone, ul);
+        })();
+        </script>
+    </body>
+</html>

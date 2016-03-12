@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="index.css"/>
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="customers.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="jquery.highlight.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Customers</h1>
+        <form class="form-inline">
+        <div class="form-group">
+            <label for="industrySel">Industry</label> 
+            <select id="industrySel">
+                <option value="All">All</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="highlight">Highlight</label>
+            <input type="text" id="highlight" placeholder="keyword"/>
+        </div>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th id="name"><span>Customer Name</span></th>
+                    <th id="industry"><span>Industry</span></th>
+                    <th id="state"><span>State</span></th>
+                    <th id="revenue"><span>Revenue</span></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
+    </body>
+</html>

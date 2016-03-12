@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <style type="text/css">
+            ul {
+                border: 1px solid black;
+            }
+            li {
+                margin: 50px;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="list">
+            <li>Item one</li>
+            <li>Item two</li>
+            <li>Item three</li>
+            <li>Item four</li>
+        </ul>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var ul = document.getElementById("list");
+            ul.onmouseenter = function() {
+                printout("Enter");
+            }
+            ul.onmouseover = function() {
+                printout("Over");
+            }
+            ul.onmouseout = function() {
+                printout("Out");
+            }
+            ul.onmouseleave = function() {
+                printout("Leave");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form method="post">
+            Username: <input type="text" name="username" value="" /><br/>
+            Password: <input type="password" name="password" value="" /><br/>
+            School:<br/>
+            <input type="radio" name="school" value="sofia" />Sofia<br/>
+            <input type="radio" name="school" value="stanford" />Stanford<br/>
+            <input type="radio" name="school" value="berkeley" />Berkeley<br/>
+            <input type="submit" name="login" value="Log In" />
+        </form>
+        <script type="text/javascript">
+            var radios = document.getElementsByName("school");
+            var radio = radios[1];
+            var text = radio.nextSibling;
+            alert(text.nodeValue);
+        </script>
+    </body>
+</html>

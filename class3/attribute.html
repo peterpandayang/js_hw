@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div id="foo">Hello World</div>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+            var div = document.getElementById("foo");
+            div.id = "bar";
+            div.title = "This is a tooltip";
+            div.setAttribute("price", "100");
+            
+            var pre = document.getElementById("output");
+            var output = div.getAttribute("price") + "\n" + div.firstChild.nodeValue;
+            printout(output);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" id="name1" value="" /></td>
+                    <td><input type="text" id="grade1" value="" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="name2" value="" /></td>
+                    <td><input type="text" id="grade2" value="" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>Output Console</h1>
+        <pre id="output"></pre>
+        
+        <script type="text/javascript" src="printout.js"></script>
+        <script type="text/javascript">
+        (function() {
+            function checkBlank(event) {
+                if (event.target.value === "") {
+                    printout(event.target.id + " is blank.");
+                }
+            }
+            
+            function checkGrade(event) {
+                var grade = event.target.value.toUpperCase();
+                if (grade !== "A" && grade !== "B" && grade !== "C" && 
+                    grade !== "D" && grade !== "F" && grade !== "") {
+                    printout(event.target.id + " is invalid.");
+                } else {
+                    event.target.value = grade;
+                }
+            }
+            
+            var name1 = document.getElementById("name1");
+            var name2 = document.getElementById("name2");
+            var grade1 = document.getElementById("grade1");
+            var grade2 = document.getElementById("grade2");
+            
+            name1.onblur = checkBlank;
+            name2.onblur = checkBlank;
+            grade1.onblur = checkGrade;
+            grade2.onblur = checkGrade;
+        })();
+        </script>
+    </body>
+</html>
